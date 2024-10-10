@@ -1,36 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   type_num.c                                         :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arcebria <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/08 19:27:24 by arcebria          #+#    #+#             */
-/*   Updated: 2024/10/10 17:40:04 by arcebria         ###   ########.fr       */
+/*   Created: 2024/09/17 10:58:02 by arcebria          #+#    #+#             */
+/*   Updated: 2024/09/30 16:41:52 by arcebria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
+#include <stddef.h>
 
-void	ft_putnbr(int n, int *count)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	unsigned int	nbr;
+	size_t	i;
 
-	if (n < 0)
+	if ((dest == NULL && src == NULL))
+		return (NULL);
+	i = 0;
+	while (i < n)
 	{
-		ft_putchar('-', count);
-		nbr = -n;
+		*((char *)dest + i) = *((const char *) src + i);
+		i++;
 	}
-	else
-		nbr = n;
-	if (nbr >= 10)
-		ft_putnbr(nbr / 10, count);
-	ft_putchar((nbr % 10) + '0', count);
+	return (dest);
 }
+/*
+#include <stdio.h>
 
-void	ft_putuns(unsigned int n, int *count)
+int	main(void)
 {
-	if (n >= 10)
-		ft_putuns(n / 10, count);
-	ft_putchar((n % 10) + '0', count);
-}
+	char	dest[] = "";
+	char	src[] = "";
+
+	ft_memcpy(dest, src, 5);
+	printf("%s\n", dest);
+	return (0);
+}*/

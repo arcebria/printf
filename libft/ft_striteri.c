@@ -1,36 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   type_num.c                                         :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arcebria <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/08 19:27:24 by arcebria          #+#    #+#             */
-/*   Updated: 2024/10/10 17:40:04 by arcebria         ###   ########.fr       */
+/*   Created: 2024/09/27 13:32:36 by arcebria          #+#    #+#             */
+/*   Updated: 2024/09/27 14:29:30 by arcebria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
-
-void	ft_putnbr(int n, int *count)
+#include "libft.h"
+/*
+void	ft(unsigned int i, char *s)
 {
-	unsigned int	nbr;
-
-	if (n < 0)
+	if (i == 0)
 	{
-		ft_putchar('-', count);
-		nbr = -n;
+		if (*s >= 'a' && *s <= 'z')
+			*s -= 32;
 	}
-	else
-		nbr = n;
-	if (nbr >= 10)
-		ft_putnbr(nbr / 10, count);
-	ft_putchar((nbr % 10) + '0', count);
-}
+}*/
 
-void	ft_putuns(unsigned int n, int *count)
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	if (n >= 10)
-		ft_putuns(n / 10, count);
-	ft_putchar((n % 10) + '0', count);
+	int	i;
+
+	i = 0;
+	if (!*s || !f)
+		return ;
+	while (s[i])
+	{
+		(*f)(i, &s[i]);
+		i++;
+	}
 }
+/*
+#include <stdio.h>
+int	main(void)
+{
+	char	s[] = "hola";
+
+	ft_striteri(s, ft);
+	printf("%s\n", s);
+	return (0);
+}*/

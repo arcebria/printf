@@ -1,36 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   type_num.c                                         :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arcebria <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/08 19:27:24 by arcebria          #+#    #+#             */
-/*   Updated: 2024/10/10 17:40:04 by arcebria         ###   ########.fr       */
+/*   Created: 2024/09/16 12:11:09 by arcebria          #+#    #+#             */
+/*   Updated: 2024/09/17 19:12:44 by arcebria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-void	ft_putnbr(int n, int *count)
+int	ft_isalpha(int c)
 {
-	unsigned int	nbr;
-
-	if (n < 0)
-	{
-		ft_putchar('-', count);
-		nbr = -n;
-	}
-	else
-		nbr = n;
-	if (nbr >= 10)
-		ft_putnbr(nbr / 10, count);
-	ft_putchar((nbr % 10) + '0', count);
+	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+		return (1);
+	return (0);
 }
-
-void	ft_putuns(unsigned int n, int *count)
+/*
+#include<stdio.h>
+int	main(void)
 {
-	if (n >= 10)
-		ft_putuns(n / 10, count);
-	ft_putchar((n % 10) + '0', count);
+	int	c;
+
+	c = 90;
+	printf("%d\n", ft_isalpha(c));
+	return (0);
 }
+*/

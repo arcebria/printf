@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arcebria <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/08 19:47:57 by arcebria          #+#    #+#             */
-/*   Updated: 2024/10/08 19:59:19 by arcebria         ###   ########.fr       */
+/*   Created: 2024/09/16 13:24:14 by arcebria          #+#    #+#             */
+/*   Updated: 2024/09/17 18:11:27 by arcebria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFTPRINTF_H
-# define LIBFTPRINTF_H
+#include "libft.h" 
 
-# include <stdarg.h>
-# include <unistd.h>
-
-int		ft_printf(char const *str, ...);
-
-void	ft_putchar(int c, int *count);
-void	ft_putstr(char *s, int *count);
-void	ft_putnbr(int n, int *count);
-void	ft_putuns(int n, int *count);
-
-#endif
+int	ft_isalnum(int c)
+{
+	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
+		return (1);
+	if (c >= '0' && c <= '9')
+		return (1);
+	return (0);
+}
+/*
+#include<stdio.h>
+int	main(int a)
+{
+	a = 145;
+	printf("%d\n", ft_isalnum(a));
+	return (0);
+}*/

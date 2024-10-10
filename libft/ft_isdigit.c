@@ -1,36 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   type_num.c                                         :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arcebria <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/08 19:27:24 by arcebria          #+#    #+#             */
-/*   Updated: 2024/10/10 17:40:04 by arcebria         ###   ########.fr       */
+/*   Created: 2024/09/16 12:27:13 by arcebria          #+#    #+#             */
+/*   Updated: 2024/09/17 19:15:41 by arcebria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-void	ft_putnbr(int n, int *count)
+int	ft_isdigit(int c)
 {
-	unsigned int	nbr;
-
-	if (n < 0)
-	{
-		ft_putchar('-', count);
-		nbr = -n;
-	}
-	else
-		nbr = n;
-	if (nbr >= 10)
-		ft_putnbr(nbr / 10, count);
-	ft_putchar((nbr % 10) + '0', count);
+	if (c >= '0' && c <= '9')
+		return (1);
+	return (0);
 }
-
-void	ft_putuns(unsigned int n, int *count)
+/*
+#include<stdio.h>
+int	main(void)
 {
-	if (n >= 10)
-		ft_putuns(n / 10, count);
-	ft_putchar((n % 10) + '0', count);
-}
+	int	c;
+	int	a;
+
+	c = 58;
+	a = 57;
+	printf("%d, %d\n", ft_isdigit(c), ft_isdigit(a));
+	return (0);
+}*/

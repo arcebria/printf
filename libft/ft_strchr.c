@@ -1,36 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   type_num.c                                         :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arcebria <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/08 19:27:24 by arcebria          #+#    #+#             */
-/*   Updated: 2024/10/10 17:40:04 by arcebria         ###   ########.fr       */
+/*   Created: 2024/09/18 18:56:12 by arcebria          #+#    #+#             */
+/*   Updated: 2024/09/30 18:14:57 by arcebria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
+#include <stddef.h>
 
-void	ft_putnbr(int n, int *count)
+char	*ft_strchr(const char *s, int c)
 {
-	unsigned int	nbr;
+	char	ch;
 
-	if (n < 0)
+	ch = (char)c;
+	while (*s)
 	{
-		ft_putchar('-', count);
-		nbr = -n;
+		if (*s == ch)
+			return ((char *)s);
+		s++;
 	}
-	else
-		nbr = n;
-	if (nbr >= 10)
-		ft_putnbr(nbr / 10, count);
-	ft_putchar((nbr % 10) + '0', count);
+	if (ch == '\0')
+		return ((char *)s);
+	return (NULL);
 }
-
-void	ft_putuns(unsigned int n, int *count)
+/*
+#include <stdio.h>
+int	main(void)
 {
-	if (n >= 10)
-		ft_putuns(n / 10, count);
-	ft_putchar((n % 10) + '0', count);
-}
+	char	s[] = "Hola";
+
+	printf("%s", ft_strchr(s, 'a'));
+	return (0);
+}*/

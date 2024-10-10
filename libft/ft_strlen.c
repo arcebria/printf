@@ -1,36 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   type_num.c                                         :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arcebria <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/08 19:27:24 by arcebria          #+#    #+#             */
-/*   Updated: 2024/10/10 17:40:04 by arcebria         ###   ########.fr       */
+/*   Created: 2024/09/16 14:06:38 by arcebria          #+#    #+#             */
+/*   Updated: 2024/09/17 19:14:55 by arcebria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include <stddef.h>
+#include "libft.h"
 
-void	ft_putnbr(int n, int *count)
+size_t	ft_strlen(const char *str)
 {
-	unsigned int	nbr;
+	size_t	len;
 
-	if (n < 0)
-	{
-		ft_putchar('-', count);
-		nbr = -n;
-	}
-	else
-		nbr = n;
-	if (nbr >= 10)
-		ft_putnbr(nbr / 10, count);
-	ft_putchar((nbr % 10) + '0', count);
+	len = 0;
+	while (str[len])
+		len++;
+	return (len);
 }
-
-void	ft_putuns(unsigned int n, int *count)
+/*
+size_t	ft_strlen(const char *str)
 {
-	if (n >= 10)
-		ft_putuns(n / 10, count);
-	ft_putchar((n % 10) + '0', count);
+	const char *s;
+
+	s = str;
+	while (*s)
+		s++;
+	return (s - str);
 }
+#include<stdio.h>
+int	main(void)
+{
+	char	str[] = "dkhgis";
+
+	printf("%ld\n", ft_strlen(str));
+	return (0);
+}*/

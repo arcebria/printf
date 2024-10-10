@@ -1,36 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   type_num.c                                         :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arcebria <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/08 19:27:24 by arcebria          #+#    #+#             */
-/*   Updated: 2024/10/10 17:40:04 by arcebria         ###   ########.fr       */
+/*   Created: 2024/09/21 16:17:00 by arcebria          #+#    #+#             */
+/*   Updated: 2024/09/21 17:01:05 by arcebria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
+#include <stdlib.h>
 
-void	ft_putnbr(int n, int *count)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	unsigned int	nbr;
+	void	*buffer;
 
-	if (n < 0)
-	{
-		ft_putchar('-', count);
-		nbr = -n;
-	}
-	else
-		nbr = n;
-	if (nbr >= 10)
-		ft_putnbr(nbr / 10, count);
-	ft_putchar((nbr % 10) + '0', count);
+	buffer = (void *)malloc(nmemb * size);
+	if (!buffer)
+		return (NULL);
+	ft_bzero(buffer, nmemb * size);
+	return (buffer);
 }
+/*
+#include <stdio.h>
 
-void	ft_putuns(unsigned int n, int *count)
+int	main(void)
 {
-	if (n >= 10)
-		ft_putuns(n / 10, count);
-	ft_putchar((n % 10) + '0', count);
-}
+	printf("%s", (char *)ft_calloc('0', '0'));
+	return (0);
+}*/
