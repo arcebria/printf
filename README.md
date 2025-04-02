@@ -8,29 +8,24 @@ a trabajar con funciones variádicas y entender cómo manejar diferentes tipos d
 
 Durante este proyecto, adquirí conocimientos clave relacionados con:
 
-**1. Funciones Variádicas**
-Aprendí a trabajar con **funciones variádicas**, una característica del lenguaje C que permite manejar un número variable
-de argumentos. Usando stdarg.h, implementé la capacidad de procesar diferentes tipos de datos pasados a la función, 
-como enteros, cadenas de texto y caracteres.
+  **1. Funciones Variádicas**
+  Aprendí a trabajar con **funciones variádicas**, una característica del lenguaje C que permite manejar un número   variable de argumentos. Usando stdarg.h, implementé la capacidad de procesar diferentes tipos de datos pasados a   la función, como enteros, cadenas de texto y caracteres.
 
-**2. Formato de Impresión**
-Desarrollé la habilidad de implementar el sistema de **formato de impresión** de datos. Esto incluyó gestionar 
-diferentes especificadores de formato como %d, %s, %c, entre otros, y adaptar la salida para cada tipo de dato 
-correctamente.
+  **2. Formato de Impresión**
+  Desarrollé la habilidad de implementar el sistema de **formato de impresión** de datos. Esto incluyó gestionar 
+  diferentes especificadores de formato como %d, %s, %c, entre otros, y adaptar la salida para cada tipo de dato 
+  correctamente.
 
-**3. Manipulación de Cadenas y Buffers**
-En el proyecto, también aprendí a **trabajar con cadenas y buffers**. Implementé un sistema para manejar la 
-conversión de valores a cadenas, lo cual es esencial para representar adecuadamente los datos que deben ser impresos.
+  **3. Manipulación de Cadenas y Buffers**
+  En el proyecto, también aprendí a **trabajar con cadenas y buffers**. Implementé un sistema para manejar la 
+  conversión de valores a cadenas, lo cual es esencial para representar adecuadamente los datos que deben ser     impresos.
 
-**4. Control de Errores y Casos Especiales**
-Tuve que **gestionar correctamente los errores** y los **casos extremos**. Por ejemplo, me aseguré de que mi función manejara
-correctamente la impresión de valores nulos o de longitud cero. Estos detalles son esenciales para crear una función 
-robusta y confiable.
+  **4. Control de Errores y Casos Especiales**
+  Tuve que **gestionar correctamente los errores** y los **casos extremos**. Por ejemplo, me aseguré de que mi       función manejara correctamente la impresión de valores nulos o de longitud cero. Estos detalles son esenciales     para crear una función robusta y confiable.
 
-**5. Optimización**
-A lo largo del proyecto, optimicé el código para mejorar el rendimiento y evitar la repetición innecesaria de 
-trabajo. Esta parte me ayudó a **entender mejor el uso de memoria y la eficiencia en las funciones de bajo nivel**, 
-lo cual es vital en programación de sistemas.
+  **5. Optimización**
+  A lo largo del proyecto, optimicé el código para mejorar el rendimiento y evitar la repetición innecesaria de 
+  trabajo. Esta parte me ayudó a **entender mejor el uso de memoria y la eficiencia en las funciones de bajo         nivel**, lo cual es vital en programación de sistemas.
 
 **El resultado final**
 
